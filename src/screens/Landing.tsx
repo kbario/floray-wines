@@ -1,21 +1,28 @@
-import { Box, Grid, Button } from "@mui/material";
+import { Box, Grid, Button, Stack } from "@mui/material";
 import { FC } from "react";
 import Menu from "../components/Menu";
 
 const Landing: FC = () => {
   return (
-    <Grid columns={{ xs: 1, md: 2 }} p={5}>
+    <Box
+      sx={{
+        width: "100vw",
+        height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
       <h1>Amazing wine by all standards</h1>
       <p>Consciously made in every way, for you and your future.</p>
-      <Grid spacing={"5"}>
+      <Box sx={{direction="row" justifyContent="center" spacing}}>
         <Button variant="contained" size="large">
           Our wine
         </Button>
         <Button variant="outlined" size="large">
           About us
         </Button>
-      </Grid>
-    </Grid>
+      </Box>
+    </Box>
   );
 };
 
