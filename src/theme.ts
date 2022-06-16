@@ -1,5 +1,4 @@
 import { createTheme } from "@mui/material/styles";
-import { blue } from "@mui/material/colors";
 
 const theme = createTheme({
   palette: {
@@ -9,6 +8,12 @@ const theme = createTheme({
     secondary: {
       main: "#F8FAFC",
     },
+    bg: {
+      main: "#F1F5F9",
+    },
+  },
+  typography: {
+    fontFamily: "EB Garamond",
   },
 });
 
