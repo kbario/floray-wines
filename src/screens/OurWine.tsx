@@ -1,14 +1,16 @@
 import { FC } from "react";
 import { Box } from "@mui/material";
 import WineSection from "../components/WineSection";
-import WineList from "../data/WineList";
+import useBlog from "../hooks/useBlog";
 
 const OurWine: FC = () => {
+  const wineList = useBlog('*[_type=="wine');
   return (
     <Box>
-      {WineList.map((wine, idx, arr) => {
+      poop
+      {/*wineList.map((wine, idx, arr) => {
         return <WineSection key={idx} wine={wine} />;
-      })}
+      })*/}
     </Box>
   );
 };

@@ -7,6 +7,7 @@ import Contact from "./screens/Contact";
 import Gallery from "./screens/Gallery";
 import Landing from "./screens/Landing";
 import OurWine from "./screens/OurWine";
+import Blog from "./screens/Blog";
 
 import theme from "./theme";
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/our-wine" element={<OurWine />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/blog" element={<Blog />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
