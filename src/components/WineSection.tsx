@@ -1,12 +1,19 @@
 import { FC } from "react";
 import { Box } from "@mui/material";
-import { WineListType } from "../data/WineList";
+import { PortableText } from "@portabletext/react";
+import WineRes from "../types/sanityWine";
 
-const WineSection: FC<{ wine: WineListType }> = ({ wine }) => {
-  const { name, type, year, tasting, description } = wine;
+const WineSection: FC<{ wine: WineRes }> = ({ wine }) => {
+  console.log(wine);
   return (
-    <Box width="100vw" height="50px">
-      <p>{name}</p>
+    <Box>
+      <h1>{wine.name}</h1>
+      <h3>{wine.year}</h3>
+      <h3>{wine.type}</h3>
+      <h2>Description</h2>
+      <PortableText value={wine.description} />
+      <h2>Tasting</h2>
+      <PortableText value={wine.tasting} />
     </Box>
   );
 };

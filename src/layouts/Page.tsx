@@ -1,10 +1,9 @@
-import { Box } from "@mui/material";
-import { blueGrey } from "@mui/material/colors";
-import { BoxProps } from "@mui/system";
+import { Box, BoxProps, SxProps } from "@mui/material";
 import { FC } from "react";
+import Mennu from "../components/Menu";
 import theme from "../theme";
 
-const Page: FC<BoxProps> = ({ children, sx }): JSX.Element => {
+const Page: FC<BoxProps> = ({ children, sx }) => {
   return (
     <Box
       sx={{
@@ -12,13 +11,21 @@ const Page: FC<BoxProps> = ({ children, sx }): JSX.Element => {
         flexDirection: "column",
         width: "100vw",
         height: "100vh",
-        padding: theme.spacing(4),
         backgroundColor: "bg.main",
-        gap: theme.spacing(4),
-        ...sx,
       }}
     >
-      {children}
+      <Mennu />
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          padding: theme.spacing(4),
+          gap: theme.spacing(4),
+          ...sx,
+        }}
+      >
+        {children && children}
+      </Box>
     </Box>
   );
 };

@@ -1,8 +1,8 @@
 import sanityClient from "@sanity/client";
 import { useEffect, useState } from "react";
 
-const useBlog = (query: string, params: object = {}) => {
-  const [blog, setBlog] = useState();
+const useSanity = (query: string, params = {}) => {
+  const [sanity, setSanity] = useState();
 
   const client = sanityClient({
     projectId: "bycnl4yq",
@@ -13,14 +13,14 @@ const useBlog = (query: string, params: object = {}) => {
     useCdn: true, // `false` if you want to ensure fresh data
   });
   useEffect(() => {
-    async function getBlog() {
+    async function getSanity() {
       const blog = await client.fetch(query, params);
-      setBlog(blog);
+      setSanity(blog);
     }
-    getBlog();
+    getSanity();
   }, []);
 
-  return blog;
+  return sanity;
 };
 
-export default useBlog;
+export default useSanity;

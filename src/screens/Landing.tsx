@@ -8,7 +8,7 @@ import theme from "../theme";
 
 const Landing: FC = () => {
   return (
-    <Page sx={{ justifyContent: "center", textAlign: "center" }}>
+    <Box sx={{ justifyContent: "center", textAlign: "center" }}>
       <h1>Amazing wine by all standards</h1>
       <p>Consciously made in every way, for you and your future.</p>
       <Box
@@ -31,7 +31,7 @@ const Landing: FC = () => {
           </Button>
         </Link>
       </Box>
-    </Page>
+    </Box>
   );
 };
 
