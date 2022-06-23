@@ -2,7 +2,14 @@ import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
   components: {
-    MuiTypography: {},
+    MuiTypography: {
+      styleOverrides: {
+        h1: {
+          fontFamily: "EB Garamond",
+          fontSize: "60px",
+        },
+      },
+    },
     MuiCssBaseline: {
       styleOverrides: {
         h1: {
@@ -36,6 +43,7 @@ const theme = createTheme({
         a: {
           margin: "0px",
           FontFace: "Poppins",
+          textDecoration: "none",
         },
       },
     },
