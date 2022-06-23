@@ -1,6 +1,6 @@
 import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 
 import AboutUs from "./screens/AboutUs";
 import Contact from "./screens/Contact";
@@ -18,7 +18,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <BrowserRouter>
+      <HashRouter>
         <Page>
           <Routes>
             <Route path="/" element={<Landing />} />
@@ -29,7 +29,7 @@ function App() {
             <Route path="/blog" element={<Blog />} />
           </Routes>
         </Page>
-      </BrowserRouter>
+      </HashRouter>
     </ThemeProvider>
   );
 }
