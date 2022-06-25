@@ -19,9 +19,13 @@ import Logo from "../components/Logo";
 import { NavLink, Link } from "react-router-dom";
 import theme from "../theme";
 import MenuIcon from "@mui/icons-material/Menu";
+import PeopleIcon from "@mui/icons-material/People";
+import WineBarIcon from "@mui/icons-material/WineBar";
+import ArticleIcon from "@mui/icons-material/Article";
 
 const Mennu: FC = () => {
   const menuItems = ["About Us", "Our Wine", "Blog"];
+  const menuIcons = [<PeopleIcon />, <WineBarIcon />, <ArticleIcon />];
   const isPhone = useMediaQuery(theme.breakpoints.down("sm"));
   const [drawer, setDrawer] = useState(false);
 
@@ -76,7 +80,7 @@ const Mennu: FC = () => {
         )}
       </Box>
       <Drawer
-        variant="persistent"
+        variant="temporary"
         anchor="right"
         open={drawer}
         sx={{
@@ -94,6 +98,7 @@ const Mennu: FC = () => {
           sx={{
             overflow: "auto",
             backgroundColor: theme.palette.bg?.main,
+            height: "100vh - 390px",
           }}
         >
           <List>
@@ -104,12 +109,13 @@ const Mennu: FC = () => {
                   to={`/${item.replace(" ", "-").toLowerCase()}`}
                   onClick={() => setDrawer(false)}
                 >
-                  <ListItem key={item}>
+                  <ListItem
+                    key={item}
+                    sx={{ backgroundColor: theme.palette.bg?.main }}
+                  >
                     <ListItemButton>
-                      <ListItemIcon>
-                        {idx % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                      </ListItemIcon>
-                      <ListItemText primary={item} />
+                      <ListItemIcon>{menuIcons[idx]}</ListItemIcon>
+                      <ListItemText primary={item} sx={{ color: "black" }} />
                     </ListItemButton>
                   </ListItem>
                 </Link>

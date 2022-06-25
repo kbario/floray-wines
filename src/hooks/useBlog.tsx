@@ -7,7 +7,7 @@ const useSanity = (query: string, params = {}) => {
   const client = sanityClient({
     projectId: "bycnl4yq",
     dataset: "blog",
-    apiVersion: "2022-06-19", // use current UTC date - see "specifying API version"!
+    apiVersion: "2022-06-24", // use current UTC date - see "specifying API version"!
     token:
       "skIyjzxXElToGhvzw7AK72qV3nZc3hWwh5fxxDZH1pGOv3wf4rWHDKrwi4PYEae1OUGkF2NduB7WZgEmSliOAyKOcaz1oWW81RiFfmI10kuodTcr84fCmyT9BNThherL6BPNbw2VNlWVABTsYY7dhJcn0tJtrFf9ECQmokSz1r2eW9EKBUhk", // or leave blank for unauthenticated usage
     useCdn: true, // `false` if you want to ensure fresh data

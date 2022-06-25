@@ -6,7 +6,7 @@ import { PortableText } from "@portabletext/react";
 const BlogPost: FC<{ post: Post }> = ({ post }) => {
   return (
     <Box width={"100%"}>
-      <Typography variant="h1">{post.title}</Typography>
+      <Typography variant="title">{post.title}</Typography>
       <PortableText value={post.body} />
     </Box>
   );

@@ -21,6 +21,8 @@ const Page: FC<BoxProps> = ({ children, sx }) => {
           flexDirection: "column",
           padding: theme.spacing(4),
           gap: theme.spacing(4),
+          overflowX: "hidden",
+          overflowY: "auto",
           ...sx,
         }}
       >

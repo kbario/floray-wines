@@ -2,14 +2,6 @@ import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
   components: {
-    MuiTypography: {
-      styleOverrides: {
-        h1: {
-          fontFamily: "EB Garamond",
-          fontSize: "60px",
-        },
-      },
-    },
     MuiCssBaseline: {
       styleOverrides: {
         h1: {
@@ -59,6 +51,12 @@ const theme = createTheme({
       main: "#F1F5F9",
     },
   },
+  typography: {
+    title: {
+      fontFamily: "EB Garamond",
+      fontSize: "4rem",
+    },
+  },
 });
 
 export default theme;
@@ -74,4 +72,22 @@ declare module "@mui/material/styles" {
 }
 function local(arg0: string) {
   throw new Error("Function not implemented.");
+}
+
+declare module "@mui/material/styles" {
+  interface TypographyVariants {
+    title: React.CSSProperties;
+  }
+
+  // allow configuration using `createTheme`
+  interface TypographyVariantsOptions {
+    title?: React.CSSProperties;
+  }
+}
+
+// Update the Typography's variant prop options
+declare module "@mui/material/Typography" {
+  interface TypographyPropsVariantOverrides {
+    title: true;
+  }
 }
