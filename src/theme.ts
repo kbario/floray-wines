@@ -42,10 +42,10 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      main: "#0F232F",
+      main: "#284B63",
     },
     secondary: {
-      main: "#F8FAFC",
+      main: "#0F232F",
     },
     bg: {
       main: "#F1F5F9",
@@ -61,6 +61,7 @@ const theme = createTheme({
 
 export default theme;
 
+// palette types
 declare module "@mui/material/styles" {
   interface Palette {
     bg?: Palette["primary"];
@@ -70,22 +71,18 @@ declare module "@mui/material/styles" {
     bg?: PaletteOptions["primary"];
   }
 }
-function local(arg0: string) {
-  throw new Error("Function not implemented.");
-}
 
+// typography types
 declare module "@mui/material/styles" {
   interface TypographyVariants {
     title: React.CSSProperties;
   }
 
-  // allow configuration using `createTheme`
   interface TypographyVariantsOptions {
     title?: React.CSSProperties;
   }
 }
 
-// Update the Typography's variant prop options
 declare module "@mui/material/Typography" {
   interface TypographyPropsVariantOverrides {
     title: true;

@@ -98,7 +98,9 @@ const Mennu: FC = () => {
           sx={{
             overflow: "auto",
             backgroundColor: theme.palette.bg?.main,
-            height: "100vh - 390px",
+            top: "83px",
+            height: "calc(100vh - 83px)",
+            position: "relative",
           }}
         >
           <List>
