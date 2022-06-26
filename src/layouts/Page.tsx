@@ -23,6 +23,7 @@ const Page: FC<BoxProps> = ({ children, sx }) => {
           gap: theme.spacing(4),
           overflowX: "hidden",
           overflowY: "auto",
+          flexGrow: 1,
           ...sx,
         }}
       >

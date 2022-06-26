@@ -15,7 +15,7 @@ const Landing: FC = () => {
         gap: theme.spacing(4),
         width: "100%",
         height: "100%",
-        flexShrink: "0",
+        flexGrow: 1,
       }}
     >
       <Typography variant="h1">Amazing wine by all standards</Typography>
