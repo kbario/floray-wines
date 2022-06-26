@@ -74,6 +74,9 @@ const typography: ThemeOptions["typography"] = {
     fontSize: "1.5rem",
     color: palette.subtitle2?.main,
   },
+  h1: {
+    fontSize: "4rem",
+  },
 };
 
 const theme = createTheme({

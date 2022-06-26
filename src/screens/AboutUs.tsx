@@ -4,7 +4,7 @@ import Page from "../layouts/Page";
 
 const AboutUs: FC = () => {
   return (
-    <Box>
+    <Box sx={{ display: "flex", flexDirection: "column", gap: "16px" }}>
       <Typography>
         Growing up in Mumbai, India grandson to a family of refugees I felt a
         drive to explore, food, cultures, adventure and travel. I did well in

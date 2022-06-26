@@ -20,7 +20,8 @@ const Landing: FC = () => {
     >
       <Typography variant="h1">Amazing wine by all standards</Typography>
       <Typography variant="subtitle1">
-        Consciously made in every way, for you and your future.
+        Consciously made in every way, in Masterton, NZ, for you and your
+        future.
       </Typography>
       <Box
         sx={{

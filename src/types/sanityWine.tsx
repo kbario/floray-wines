@@ -11,4 +11,18 @@ export default interface WineRes {
   tasting: PortableTextProps["value"];
   type: string;
   year: number;
+  inStock: boolean;
+  photo: {
+    _type: string;
+    asset: {
+      _ref: string;
+      _type: string;
+    };
+  };
+  review: {
+    link: string;
+    outOf: number;
+    reviewer: string;
+    score: number;
+  };
 }

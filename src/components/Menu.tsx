@@ -42,6 +42,7 @@ const Mennu: FC = () => {
           padding: theme.spacing(3),
           paddingBottom: 0,
           gap: theme.spacing(3),
+          height: "100px",
         }}
       >
         <Box

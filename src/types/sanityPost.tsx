@@ -4,6 +4,7 @@ export default interface Post {
   _rev: string;
   _type: string;
   _updatedAt: string;
+  summary: string;
   author: {
     _ref: string;
     _type: string;
