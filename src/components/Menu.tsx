@@ -1,3 +1,10 @@
+import { FC, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+
+import ArticleIcon from "@mui/icons-material/Article";
+import MenuIcon from "@mui/icons-material/Menu";
+import PeopleIcon from "@mui/icons-material/People";
+import WineBarIcon from "@mui/icons-material/WineBar";
 import {
   Box,
   Button,
@@ -12,16 +19,9 @@ import {
   Typography,
   useMediaQuery,
 } from "@mui/material";
-import MailIcon from "@mui/icons-material/MailOutline";
-import InboxIcon from "@mui/icons-material/InboxOutlined";
-import { FC, useState } from "react";
+
 import Logo from "../components/Logo";
-import { NavLink, Link } from "react-router-dom";
 import theme from "../theme";
-import MenuIcon from "@mui/icons-material/Menu";
-import PeopleIcon from "@mui/icons-material/People";
-import WineBarIcon from "@mui/icons-material/WineBar";
-import ArticleIcon from "@mui/icons-material/Article";
 
 const Mennu: FC = () => {
   const menuItems = ["About Us", "Our Wine", "Blog"];
@@ -57,7 +57,7 @@ const Mennu: FC = () => {
               <Logo fontSize="large" />
             </IconButton>
           </Link>
-          <Typography variant="h5">Floray Wines</Typography>
+          <Typography variant="floray">Floray Wines</Typography>
         </Box>
         {!isPhone && (
           <Box sx={{ display: "flex", gap: "8px" }}>
@@ -67,26 +67,30 @@ const Mennu: FC = () => {
                   key={idx}
                   to={`/${item.replace(" ", "-").toLowerCase()}`}
                 >
-                  <Button>{item}</Button>
+                  <Button key={item}>{item}</Button>
                 </NavLink>
               );
             })}
           </Box>
         )}
         {isPhone && (
-          <IconButton color="inherit" aria-label="menu" size="large">
-            <MenuIcon fontSize="large" onClick={() => setDrawer(!drawer)} />
+          <IconButton
+            color="inherit"
+            aria-label="menu"
+            size="large"
+            onClick={() => setDrawer(!drawer)}
+          >
+            <MenuIcon fontSize="large" />
           </IconButton>
         )}
       </Box>
       <Drawer
-        variant="temporary"
+        variant="persistent"
         anchor="right"
         open={drawer}
         sx={{
           width: "50%",
           backgroundColor: theme.palette.bg?.main,
-          // flexShrink: 0,
           [`& .MuiDrawer-paper`]: {
             width: "100%",
             boxSizing: "border-box",
@@ -106,15 +110,13 @@ const Mennu: FC = () => {
           <List>
             {menuItems.map((item, idx) => (
               <>
-                {idx !== 0 && <Divider variant="middle" />}
+                {idx !== 0 && <Divider variant="middle" key={item} />}
                 <Link
+                  key={idx}
                   to={`/${item.replace(" ", "-").toLowerCase()}`}
                   onClick={() => setDrawer(false)}
                 >
-                  <ListItem
-                    key={item}
-                    sx={{ backgroundColor: theme.palette.bg?.main }}
-                  >
+                  <ListItem sx={{ backgroundColor: theme.palette.bg?.main }}>
                     <ListItemButton>
                       <ListItemIcon>{menuIcons[idx]}</ListItemIcon>
                       <ListItemText primary={item} sx={{ color: "black" }} />

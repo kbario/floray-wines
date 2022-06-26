@@ -1,42 +1,14 @@
+import { PortableTextProps } from "@portabletext/react";
+
 export default interface WineRes {
   _createdAt: string;
   _id: string;
   _rev: string;
   _type: string;
   _updatedAt: string;
-  description: [
-    {
-      _key: string;
-      _type: string;
-      children: [
-        {
-          _key: string;
-          _type: string;
-          marks: string[];
-          text: string;
-        }
-      ];
-      markDefs: string[];
-      style: string;
-    }
-  ];
+  description: PortableTextProps["value"];
   name: string;
-  tasting: [
-    {
-      _key: string;
-      _type: string;
-      children: [
-        {
-          _key: string;
-          _type: string;
-          marks: string[];
-          text: string;
-        }
-      ];
-      markDefs: string[];
-      style: string;
-    }
-  ];
+  tasting: PortableTextProps["value"];
   type: string;
   year: number;
 }
