@@ -1,4 +1,4 @@
-import { Box, Chip, Typography } from "@mui/material";
+import { Box, Chip, Grid, Typography } from "@mui/material";
 import { FC } from "react";
 import Post from "../types/sanityPost";
 
@@ -6,7 +6,7 @@ const BlogPreview: FC<{ post: Post }> = ({ post }) => {
   console.log(post);
   const d = new Date(post._updatedAt);
   return (
-    <Box sx={{}}>
+    <>
       <Box
         sx={{
           display: "flex",
@@ -27,7 +27,7 @@ const BlogPreview: FC<{ post: Post }> = ({ post }) => {
         post.categories.map((cat, idx) => {
           return <Chip label={cat} key={cat._key} />;
         })} */}
-    </Box>
+    </>
   );
 };
 

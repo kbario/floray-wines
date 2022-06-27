@@ -12,9 +12,21 @@ const Blog: FC = () => {
     <Box>
       {blog?.length === 0 && <div>Loading</div>}
       {blog !== undefined && (
-        <Grid container spacing={"16px"} sx={{ width: "100%" }}>
+        <Grid container spacing={4} sx={{ width: "100%" }}>
           {blog.map((post, idx, arr) => {
-            return <BlogPreview key={idx} post={post} />;
+            return (
+              <Grid
+                item
+                sx={{
+                  border: "black 2px solid",
+                  p: "16px",
+                  borderRadius: "8px",
+                }}
+                key={idx}
+              >
+                <BlogPreview post={post} />;
+              </Grid>
+            );
           })}
         </Grid>
       )}
