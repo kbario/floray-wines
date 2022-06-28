@@ -110,10 +110,9 @@ const Mennu: FC = () => {
         >
           <List>
             {menuItems.map((item, idx) => (
-              <>
-                {idx !== 0 && <Divider variant="middle" key={item} />}
+              <Box key={idx}>
+                {idx !== 0 && <Divider variant="middle" />}
                 <Link
-                  key={idx}
                   to={`/${item.replace(" ", "-").toLowerCase()}`}
                   onClick={() => setDrawer(false)}
                 >
@@ -124,7 +123,7 @@ const Mennu: FC = () => {
                     </ListItemButton>
                   </ListItem>
                 </Link>
-              </>
+              </Box>
             ))}
           </List>
         </Box>

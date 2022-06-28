@@ -25,7 +25,13 @@ export default interface Post {
       style: "h1" | "h2" | "h3" | "h4" | "normal";
     }
   ];
-  categories: string[];
+  categories: [
+    {
+      _key: string;
+      _ref: string;
+      _type: string;
+    }
+  ];
   publishedAt: string;
   slug: {
     _type: string;
