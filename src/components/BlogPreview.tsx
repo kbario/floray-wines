@@ -26,7 +26,7 @@ const BlogPreview: FC<{
   const d = new Date(post._updatedAt);
   return (
     <Box
-      className="hover: flex cursor-pointer flex-col gap-3 rounded-md p-4 shadow-md"
+      className="flex cursor-pointer flex-col gap-3 rounded-md p-4 shadow-md transition-all hover:shadow-lg"
       onClick={() => setId(post._id)}
     >
       <Box className="flex items-center justify-between">
