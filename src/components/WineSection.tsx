@@ -54,7 +54,7 @@ const WineSection: FC<{ wine: WineRes; idx: number }> = ({ wine, idx }) => {
               onChange={handleChange("panel1")}
             >
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography>Description</Typography>
+                <Typography variant="accordionHeading">Description</Typography>
               </AccordionSummary>
               <AccordionDetails sx={{ maxHeight: "30vh", overflow: "auto" }}>
                 <PortableText value={wine.description} />

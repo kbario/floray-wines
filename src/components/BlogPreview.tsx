@@ -26,16 +26,13 @@ const BlogPreview: FC<{
   const d = new Date(post._updatedAt);
   return (
     <Box
-      className="flex flex-col gap-3 rounded-md p-4 shadow-md"
+      className="hover: flex cursor-pointer flex-col gap-3 rounded-md p-4 shadow-md"
       onClick={() => setId(post._id)}
     >
-      <Box className="align-center flex justify-between">
+      <Box className="flex items-center justify-between">
         <Typography variant="h4">{post.title}</Typography>
         <Typography variant="h6">
-          {`
-        ${d.getDate()} /
-        ${d.getMonth() + 1} /
-        ${d.getFullYear()}`}
+          {`${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`}
         </Typography>
       </Box>
       <Box className="flex gap-2">

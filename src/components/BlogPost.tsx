@@ -11,7 +11,7 @@ const BlogPost: FC<{ post: Post; back: Function }> = ({ post, back }) => {
         <IconButton onClick={() => back()} size="large">
           <ArrowBackIcon fontSize="large" />
         </IconButton>
-        <Typography variant="title">{post.title}</Typography>
+        <Typography variant="blogTitle">{post.title}</Typography>
       </Box>
       <PortableText value={post.body} />
     </Box>

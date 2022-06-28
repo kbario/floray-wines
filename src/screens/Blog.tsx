@@ -30,7 +30,7 @@ const Blog: FC = () => {
       <Box className="h-full w-full">
         {blog?.length === 0 && <div>Loading</div>}
         {blog !== undefined && (
-          <Box className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+          <Box className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {blog.map((post, idx, arr) => {
               return (
                 <BlogPreview
